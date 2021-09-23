@@ -20,4 +20,7 @@ $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 clean:
 	rm -rf $(BUILD_DIR)
 
-.PHONY: clean
+run: $(BUILD_DIR)/$(TARGET_EXEC)
+	$(BUILD_DIR)/$(TARGET_EXEC)
+
+.PHONY: clean run
