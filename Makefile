@@ -14,4 +14,10 @@ $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 	gcc $(OBJS) -o $@ $(LIB_FLAGS)
 
 $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	mkdir $(BUILD_DIR)
 	gcc -c $< -o $@ $(COMPILE_FLAGS) $(INC_FLAGS)
+
+clean:
+	rm -rf $(BUILD_DIR)
+
+.PHONY: clean
